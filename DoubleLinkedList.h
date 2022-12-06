@@ -37,6 +37,8 @@ public:
     void remove_from_back();
     int count_nodes();
 
+    bool elementExist(int);
+
     int& operator[](int);
     friend ostream& operator<<(ostream&, DoubleLinkedList&);
 };

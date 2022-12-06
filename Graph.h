@@ -34,6 +34,8 @@ public:
     Graph operator --();
     Graph operator --(int);
     bool path_exist(int, int);
+
+    bool pexist(int,int);
     friend ostream& operator <<(ostream& out, Graph&);
 };
 

@@ -11,6 +11,7 @@ using namespace std;
 ostream& operator <<(ostream& out, Graph& g){
     int i, j, k;
     out << "V = {";
+
     for (i = 0; i < g.size; ++i){
         if (i != 0){
             out << ",";
@@ -258,6 +259,9 @@ Graph Graph::operator --(){
 //    for (i = 0; i < capacity2; ++i){
 //        elements[size - 1][i] = 0;
 //    }
+    for (int i = 0; i < size-1; ++i) {
+        remove_edge(elements[i][0],elements[size-1][0]);
+    }
     size = size - 1;
     return (*this);
 }
@@ -265,6 +269,11 @@ Graph Graph::operator --(){
 Graph Graph::operator --(int a){
 
     Graph temp1 = (*this);
+    for (int i = 0; i < size-1; ++i) {
+
+        remove_edge(elements[i][0],elements[size-1][0]);
+
+    }
 //    int i;
 //    for (i = 0; i < capacity2; ++i){
 //        elements[size - 1][i] = 0;
@@ -274,48 +283,44 @@ Graph Graph::operator --(int a){
 }
 
 bool Graph::path_exist(int a, int b){
+
+    return pexist(a,b) || pexist(b,a);
+}
+
+bool Graph::pexist(int a, int b) {
     int i, j;
     DoubleLinkedList visited1;
-    DoubleLinkedList visited2;
 
     //from 1 to 3;
     for (i = 0; i < size; ++i) {
+
         if (elements[i][0]==a){
+
             if (edge_exist(a,b)){
+
                 return true;
+
             }else{
+
                 visited1.add_to_back(a);
+
                 for (j = 2; j < elements[i][1]; ++j) {
+
                     bool flag = false;
+
                     for (int k = 0; k < visited1.count_nodes(); ++k) {
+
                         if (visited1[k]==a){
+
                             flag = true;
+
                         }
+
                     }
                     if (!flag){
-                        return path_exist(elements[i][j],b);
-                    }
 
-                }
-            }
-        }
-    }
-    for (i = 0; i < size; ++i) {
-        if (elements[i][0]==b){
-            if (edge_exist(b,a)){
-                return true;
-            }else{
-                visited2.add_to_back(b);
-                for (j = 2; j < elements[i][1]; ++j) {
+                        return pexist(elements[i][j],b);
 
-                    bool flag = false;
-                    for (int k = 0; k < visited2.count_nodes(); ++k) {
-                        if (visited1[k]==b){
-                            flag = true;
-                        }
-                    }
-                    if (!flag){
-                        return path_exist(elements[i][j],a);
                     }
 
                 }

@@ -1,8 +1,12 @@
 #include <iostream>
+#include <stack>
 #include "Graph.h"
 #include "Tree.h"
 
 using namespace std;
+
+void testTree();
+void testElse();
 
 int main() {
 //    int elements[3][7] = {{1, 4, 5, 4},
@@ -172,10 +176,47 @@ int main() {
 
     cout<<endl;
 
-    Graph tree = Graph(1);
-    tree++;
-    ++tree;
-    cout<<tree<<endl;
+    testTree();
 
     return 0;
+}
+
+void testTree(){
+
+    Tree tree;
+
+    for (int j = 0; j < 4; ++j) {
+        tree++;
+    }
+
+//    cout<<tree<<endl;
+
+    for (int j = 0; j < 4; ++j) {
+        ++tree;
+    }
+//    cout<<tree<<endl;
+
+    tree--;
+
+//    cout<<tree<<endl;
+
+    tree.remove_edge(3,4);
+    tree.remove_edge(4,3);
+    tree.remove_edge(4,5);
+    tree.remove_edge(5,4);
+    tree.remove_edge(7,8);
+    tree.remove_edge(8,7);
+
+//    cout<<tree<<endl;
+
+    tree.add_edge(1,8);
+    tree.add_edge(1,5);
+    tree.add_edge(2,4);
+
+    cout<<tree<<endl;
+
+    tree.set_root(5);
+
+    cout<<tree<<endl;
+
 }

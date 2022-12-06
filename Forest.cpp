@@ -85,6 +85,7 @@ bool Forest::add_edge(int a, int b) {
 
     }
 
+
     for (i = 0; i < size; ++i){
 
         if (elements[i][0] == b){
@@ -100,6 +101,7 @@ bool Forest::add_edge(int a, int b) {
             elements[i][elements[i][1]] = b;
 
             elements[i][1] = elements[i][1] + 1;
+
 
         }
 

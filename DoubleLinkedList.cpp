@@ -198,3 +198,19 @@ ostream &operator<<(ostream &out, DoubleLinkedList &list) {
     return out;
 }
 
+bool DoubleLinkedList::elementExist(int x) {
+
+    Node* current;
+    for (current = head; current->next!=NULL;current = current->next) {
+
+        if (current->next->data == x){
+
+            return true;
+
+        }
+
+    }
+
+    return false;
+}
+

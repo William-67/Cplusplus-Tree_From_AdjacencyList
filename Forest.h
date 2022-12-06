@@ -11,14 +11,6 @@ using namespace std;
 
 class Forest : public Graph{
 
-protected:
-    int **elements;
-    int capacity1;
-    int capacity2;
-    int size;
-//    node* head;
-//    DoubleLinkedList* vertices;
-    int dummy;
 
 public:
 

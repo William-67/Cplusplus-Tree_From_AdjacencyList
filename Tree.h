@@ -6,23 +6,24 @@
 #define VINCENT_TREE_H
 
 #include "Forest.h"
+#include "DoubleLinkedList.h"
 class Tree : public Forest{
 
-protected:
-    int **elements;
-    int capacity1;
-    int capacity2;
-    int size;
-//    node* head;
-//    DoubleLinkedList* vertices;
-    int dummy;
-
+private:
+    int root;
 
 public:
     Tree();
 
+//    bool add_edge(int, int);
     Tree operator++() ;
+    Tree operator--() ;
     Tree operator++(int) ;
+    Tree operator--(int) ;
+
+    void set_root(int);
+
+    friend ostream& operator <<(ostream& out, Tree&);
 
 };
 
