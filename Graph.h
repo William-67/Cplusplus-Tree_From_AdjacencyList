@@ -1,11 +1,11 @@
-//
-// Created by weili on 2022-12-03.
+//Lixiong Wei 300145970
+//Vincent Tan 300125812
 //
 
 #ifndef VINCENT_GRAPH_H
 #define VINCENT_GRAPH_H
 
-#define MAX_ELEM 100
+#define MAX_ELEM 1000
 #include <iostream>
 using namespace std;
 

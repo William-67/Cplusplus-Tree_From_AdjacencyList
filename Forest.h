@@ -1,5 +1,5 @@
-//
-// Created by weili on 2022-12-03.
+//Lixiong Wei 300145970
+//Vincent Tan 300125812
 //
 
 #ifndef VINCENT_FOREST_H

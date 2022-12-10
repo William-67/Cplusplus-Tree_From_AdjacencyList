@@ -1,3 +1,6 @@
+//Lixiong Wei 300145970
+//Vincent Tan 300125812
+
 #include <iostream>
 
 #include "Graph.h"
@@ -14,14 +17,17 @@ void testElse();
 int main() {
 
 
-    testTree();
-//    testGraph();
 
-//    testBipartite();
+    testGraph();
+    testTree();
+    testBipartite();
     return 0;
 }
 
 void testTree(){
+
+    cout<<"Test tree"<<endl;
+    cout<<endl;
 
     Tree tree;
 
@@ -58,9 +64,13 @@ void testTree(){
 
     cout<<tree<<endl;
 
+    cout<<endl;
 }
 
 void testGraph(){
+
+    cout<<"Test graph"<<endl;
+    cout<<endl;
 
     Graph g(8);
     int i;
@@ -103,6 +113,9 @@ void testGraph(){
 
 void testBipartite(){
 
+    cout<<"Test Bipartite"<<endl;
+    cout<<endl;
+
     Bipartite b(8);
     cout<<b<<endl;
 
@@ -112,5 +125,7 @@ void testBipartite(){
     b.add_edge(1,4);
 
     cout<<b<<endl;
+
+    cout<<endl;
 
 }
