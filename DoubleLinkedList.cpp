@@ -200,10 +200,14 @@ ostream &operator<<(ostream &out, DoubleLinkedList &list) {
 
 bool DoubleLinkedList::elementExist(int x) {
 
-    Node* current;
-    for (current = head; current->next!=NULL;current = current->next) {
+    if (head==NULL){
+        return false;
+    }
 
-        if (current->next->data == x){
+    Node* current;
+    for (current = head; current!=NULL;current = current->next) {
+
+        if (current->data == x){
 
             return true;
 

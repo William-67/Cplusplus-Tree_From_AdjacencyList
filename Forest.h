@@ -19,6 +19,7 @@ public:
     Forest(const Forest&);
 
     bool add_edge(int, int);
+    void remove_edge(int, int);
 
 };
 

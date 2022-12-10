@@ -111,5 +111,10 @@ bool Forest::add_edge(int a, int b) {
 
 }
 
+void Forest::remove_edge(int a, int b) {
+    Graph::remove_edge(a,b);
+    Graph::remove_edge(b,a);
+}
+
 
 

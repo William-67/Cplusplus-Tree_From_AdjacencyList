@@ -59,9 +59,28 @@ Graph::Graph(){
     capacity1 = 0;
     capacity2 = 0;
     dummy = 0;
-    elements = NULL;
     size = 0;
-    //head = NULL;
+
+    int i, j, n = 2;
+    elements = new int*[n + MAX_ELEM];
+    for (i = 0; i < n + MAX_ELEM; ++i){
+        elements[i] = new int[n + MAX_ELEM];
+        elements[i][0] = i + 1;
+        elements[i][1] = 2;
+        elements[i][2] = 0;
+//        for (j = 2; j < n + MAX_ELEM; ++i)
+//            elements[i][j] = 0;
+    }
+
+    if (elements == NULL){
+        cout << "not enough memory";
+    }
+    else{
+        size = n;
+        capacity1 = n + MAX_ELEM;
+        capacity2 = n + MAX_ELEM;
+    }
+
 }
 
 Graph::Graph(int n){
