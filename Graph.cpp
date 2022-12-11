@@ -150,6 +150,14 @@ bool Graph::add_edge(int a, int b){
 
     int i;
 
+    if (edge_exist(a,b)){
+        return false;
+    }
+
+    if (a>size || b>size){
+        return false;
+    }
+
     for (i = 0; i < size; ++i){
         if (elements[i][0] == a){
             elements[i][elements[i][1]] = b;
